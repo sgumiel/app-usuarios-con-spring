@@ -7,24 +7,5 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-  <bean id="usuarioBaneadoService" class="UsuarioBaneadoService"></bean>
-  <bean id="usuariosService" class="UsuariosService">
-    <property name="usuarioBaneadoService" ref="usuarioBaneadoService"></property>
-  </bean>
-  <bean id="comentariosService" class="ComentariosService">
-    <property name="usuariosService" ref="usuariosService"></property>
-  </bean>
-  <bean id="comprarDineroService" class="ComprarDineroService">
-    <property name="usuariosService" ref="usuariosService"></property>
-    <property name="usuarioBaneadoService" ref="usuarioBaneadoService"></property>
-  </bean>
-  <bean id="mostrarPerfilService" class="MostrarPerfilService">
-    <property name="usuariosService" ref="usuariosService"></property>
-  </bean>
-  <bean id="principalService" class="PrincipalService">
-    <property name="comentariosService" ref="comentariosService"></property>
-    <property name="comprarDineroService" ref="comprarDineroService"></property>
-    <property name="mostrarPerfilService" ref="mostrarPerfilService"></property>
-
-  </bean>
+  <context:component-scan base-package="appusuarios"/>
 </beans>

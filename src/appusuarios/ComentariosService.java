@@ -1,5 +1,12 @@
+package appusuarios;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class ComentariosService implements IComentarios{
 
+  @Autowired
   private IUsuariosService usuariosService;
 
   @Override
@@ -13,7 +20,4 @@ public class ComentariosService implements IComentarios{
 
   }
 
-  public void setUsuariosService(UsuariosService usuariosService) {
-    this.usuariosService = usuariosService;
-  }
 }

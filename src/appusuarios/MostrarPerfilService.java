@@ -1,5 +1,12 @@
+package appusuarios;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class MostrarPerfilService implements IMostrarPerfil{
 
+  @Autowired
   private IUsuariosService usuariosService;
 
   @Override
@@ -10,11 +17,5 @@ public class MostrarPerfilService implements IMostrarPerfil{
     if(usu !=null) {
       System.out.println("El usuario: "+usu.nombre+" tiene el nickname: " + usu.nickname);
     }
-
   }
-
-  public void setUsuariosService(UsuariosService usuariosService){
-    this.usuariosService = usuariosService;
-  }
-
 }

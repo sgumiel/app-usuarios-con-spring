@@ -1,7 +1,15 @@
+package appusuarios;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class ComprarDineroService implements IComprarDinero{
 
+  @Autowired
   private IUsuariosService usuariosService;
 
+  @Autowired
   private IUsuarioBaneado usuarioBaneadoService;
 
   @Override
@@ -19,14 +27,5 @@ public class ComprarDineroService implements IComprarDinero{
     if(usu !=null ){
       System.out.println("El usuario: "+usuario+" compra la siguiente cantidad: " + cantidad);
     }
-
-  }
-
-  public void setUsuariosService(UsuariosService usuariosService) {
-    this.usuariosService = usuariosService;
-  }
-
-  public void setUsuarioBaneadoService(IUsuarioBaneado usuarioBaneadoService) {
-    this.usuarioBaneadoService = usuarioBaneadoService;
   }
 }

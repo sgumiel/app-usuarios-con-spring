@@ -1,7 +1,18 @@
+package appusuarios;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class PrincipalService implements IPrincipalService{
 
+  @Autowired
   private IComentarios comentariosService;
+
+  @Autowired
   private IMostrarPerfil mostrarPerfilService;
+
+  @Autowired
   private IComprarDinero comprarDineroService;
 
   @Override
@@ -14,17 +25,4 @@ public class PrincipalService implements IPrincipalService{
       default -> System.out.println("Comando no reconocido");
     }
   }
-
-  public void setComentariosService(ComentariosService comentariosService){
-    this.comentariosService=comentariosService;
-  }
-
-  public void setMostrarPerfilService(MostrarPerfilService mostrarPerfilService) {
-    this.mostrarPerfilService = mostrarPerfilService;
-  }
-
-  public void setComprarDineroService(ComprarDineroService comprarDineroService) {
-    this.comprarDineroService = comprarDineroService;
-  }
-
 }

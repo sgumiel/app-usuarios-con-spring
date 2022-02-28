@@ -1,7 +1,14 @@
+package appusuarios;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.util.Map;
 
+@Component
 public class UsuariosService implements IUsuariosService{
 
+  @Autowired
   private UsuarioBaneadoService usuarioBaneadoService;
 
   private Map<String, Usuario> usuarios = Map.ofEntries(
@@ -18,9 +25,4 @@ public class UsuariosService implements IUsuariosService{
       return null;
     }
   }
-
-  public void setUsuarioBaneadoService(UsuarioBaneadoService usuarioBaneadoService) {
-    this.usuarioBaneadoService = usuarioBaneadoService;
-  }
-
 }

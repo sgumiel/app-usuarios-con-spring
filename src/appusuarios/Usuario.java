@@ -1,3 +1,5 @@
+package appusuarios;
+
 public class Usuario {
 
   String nombre;

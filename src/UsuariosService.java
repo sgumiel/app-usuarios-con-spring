@@ -1,6 +1,6 @@
 import java.util.Map;
 
-public class UsuariosService {
+public class UsuariosService implements IUsuariosService{
 
   private UsuarioBaneadoService usuarioBaneadoService;
 
@@ -9,6 +9,7 @@ public class UsuariosService {
       Map.entry("Soledad", new Usuario("Soledad", "sole2000")),
       Map.entry("Lorena", new Usuario("Lorena", "lalore")));
 
+  @Override
   public Usuario findUsuario(String nombre) {
 
     if (!usuarioBaneadoService.isBaneado(nombre)) {

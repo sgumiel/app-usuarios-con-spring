@@ -1,9 +1,10 @@
-public class ComprarDineroService {
+public class ComprarDineroService implements IComprarDinero{
 
-  private UsuariosService usuariosService;
+  private IUsuariosService usuariosService;
 
-  private UsuarioBaneadoService usuarioBaneadoService;
+  private IUsuarioBaneado usuarioBaneadoService;
 
+  @Override
   public void comprarDinero(String usuario, Integer cantidad) {
 
     Boolean isUsuarioBaneado = this.usuarioBaneadoService.isBaneado(usuario);
@@ -12,7 +13,7 @@ public class ComprarDineroService {
       System.out.println("El usuario: " + usuario + " está baneado y no puede comprar");
       return;
     }
-    
+
     Usuario usu = this.usuariosService.findUsuario(usuario);
 
     if(usu !=null ){
@@ -25,7 +26,7 @@ public class ComprarDineroService {
     this.usuariosService = usuariosService;
   }
 
-  public void setUsuarioBaneadoService(UsuarioBaneadoService usuarioBaneadoService) {
+  public void setUsuarioBaneadoService(IUsuarioBaneado usuarioBaneadoService) {
     this.usuarioBaneadoService = usuarioBaneadoService;
   }
 }

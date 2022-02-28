@@ -1,9 +1,10 @@
-public class PrincipalService {
+public class PrincipalService implements IPrincipalService{
 
-  private ComentariosService comentariosService;
-  private MostrarPerfilService mostrarPerfilService;
-  private ComprarDineroService comprarDineroService;
+  private IComentarios comentariosService;
+  private IMostrarPerfil mostrarPerfilService;
+  private IComprarDinero comprarDineroService;
 
+  @Override
   public void execute(String[] args){
     switch(args[0]) {
 

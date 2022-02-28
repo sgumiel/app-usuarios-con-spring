@@ -1,7 +1,8 @@
-public class MostrarPerfilService {
+public class MostrarPerfilService implements IMostrarPerfil{
 
-  private UsuariosService usuariosService;
+  private IUsuariosService usuariosService;
 
+  @Override
   public void mostrarPerfil(String usuario) {
 
     Usuario usu = this.usuariosService.findUsuario(usuario);

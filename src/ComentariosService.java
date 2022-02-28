@@ -1,7 +1,8 @@
-public class ComentariosService {
+public class ComentariosService implements IComentarios{
 
-  private UsuariosService usuariosService;
+  private IUsuariosService usuariosService;
 
+  @Override
   public void comentar(String usuario, String comentario) {
 
     Usuario usu = this.usuariosService.findUsuario(usuario);
